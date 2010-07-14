@@ -1,17 +1,12 @@
 from django.conf.urls.defaults import *
 
+from django_pass import views as pass_views
+
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Example:
-    # (r'^django_pass/', include('django_pass.foo.urls')),
-
-    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
-    # to INSTALLED_APPS to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # (r'^admin/', include(admin.site.urls)),
+    url(r'^$', pass_views.index, name='pass_index'),
+    url(r'^passwordchange/$', pass_views.password_change, name='password_change'),
 )

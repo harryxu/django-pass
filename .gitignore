@@ -7,3 +7,4 @@ dist
 *.egg
 *.egg-info
 _mailinglist
+django_pass/manage.py
