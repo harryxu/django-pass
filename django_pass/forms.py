@@ -19,8 +19,7 @@ class PasswordChangeFrom(forms.Form):
     def clean_oldPassword(self):
         """docstring for clean_oldPassword"""
         password = self.cleaned_data['oldPassword']
-        testuser = authenticate(username=self.user.username, password=password)
-        if not testuser:
+        if not self.user.check_password(password):
             raise forms.ValidationError(__('Old password error.'))
 
         return password
